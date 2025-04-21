@@ -15,7 +15,7 @@ export const TaskChipStyles = StyleSheet.create({
   },
   label: {
     color: '#000000',
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '500',
     paddingHorizontal: 8,
   },
