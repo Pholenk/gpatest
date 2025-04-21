@@ -22,10 +22,10 @@ export const TabHeaderStyles = StyleSheet.create({
     color: '#ffffff',
   },
   activeTab: {
-    flex: 1,
     backgroundColor: '#ffffff',
     alignItems: 'center',
     padding: 4,
+    minWidth: 120,
   },
   activeTabLabel: {
     fontSize: 12,
