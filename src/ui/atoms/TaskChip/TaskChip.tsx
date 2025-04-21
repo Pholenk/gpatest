@@ -1,7 +1,7 @@
 import React, {FC, useCallback} from 'react';
 import {Text, View} from 'react-native';
 import {TaskChipStyles} from './TaskChipStyles';
-import {Tractor, Water} from '@assets';
+import {Plant, Tractor, Water} from '@assets';
 
 export interface TaskChipProps {
   label: string;
@@ -10,24 +10,28 @@ export interface TaskChipProps {
 export const TaskChip: FC<TaskChipProps> = ({label}) => {
   const styles = TaskChipStyles;
   const labelStyle =
-    label === 'cultivate' || label === 'irrigate'
+    label.toLowerCase() === 'cultivate' || label.toLowerCase() === 'irrigate'
       ? [styles.label, styles.whiteLabel]
       : styles.label;
 
   const containerStyle = () => {
-    if (label === 'cultivate') {
+    if (label.toLowerCase() === 'cultivate') {
       return [styles.container, styles.brown];
     }
 
-    if (label === 'irrigate') {
+    if (label.toLowerCase() === 'irrigate') {
       return [styles.container, styles.blue];
+    }
+
+    if (label.toLowerCase() === 'beans') {
+      return [styles.container, styles.green];
     }
 
     return styles.container;
   };
 
   const RenderIcon = useCallback(() => {
-    if (label === 'cultivate') {
+    if (label.toLowerCase() === 'cultivate') {
       return (
         <View style={[styles.iconBox, styles.brownIcon]}>
           <Tractor color="#ffffff" width={16} height={16} />
@@ -35,7 +39,7 @@ export const TaskChip: FC<TaskChipProps> = ({label}) => {
       );
     }
 
-    if (label === 'irrigate') {
+    if (label.toLowerCase() === 'irrigate') {
       return (
         <View style={[styles.iconBox, styles.blueIcon]}>
           <Water color="#ffffff" width={16} height={16} />
@@ -43,8 +47,22 @@ export const TaskChip: FC<TaskChipProps> = ({label}) => {
       );
     }
 
+    if (label.toLowerCase() === 'beans') {
+      return (
+        <View style={[styles.iconBox, styles.greenLightIcon]}>
+          <Plant color="#000000" width={16} height={16} />
+        </View>
+      );
+    }
+
     return null;
-  }, [label, styles.blueIcon, styles.brownIcon, styles.iconBox]);
+  }, [
+    label,
+    styles.blueIcon,
+    styles.brownIcon,
+    styles.greenLightIcon,
+    styles.iconBox,
+  ]);
 
   return (
     <View style={containerStyle()}>

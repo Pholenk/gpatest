@@ -13,6 +13,9 @@ export const TaskChipStyles = StyleSheet.create({
   brown: {
     backgroundColor: '#c4846a',
   },
+  green: {
+    backgroundColor: '#d8fda0',
+  },
   label: {
     color: '#000000',
     fontSize: 12,
@@ -34,5 +37,8 @@ export const TaskChipStyles = StyleSheet.create({
   },
   brownIcon: {
     backgroundColor: '#a5664c',
+  },
+  greenLightIcon: {
+    backgroundColor: '#c4fd78',
   },
 });
