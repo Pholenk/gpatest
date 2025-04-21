@@ -14,3 +14,5 @@ export * from './Plus';
 export * from './Search';
 export * from './Map';
 export * from './Menu';
+export * from './Plant';
+export * from './Warning';
