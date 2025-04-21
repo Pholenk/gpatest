@@ -5,6 +5,7 @@ import {TableCell, TableCellProps} from '@atoms';
 
 export interface RowTableProps {
   cells: TableCellProps['children'][];
+  cellStyle?: TableCellProps['style'];
 }
 
 export const RowTable: FC<RowTableProps> = props => {
@@ -16,7 +17,9 @@ export const RowTable: FC<RowTableProps> = props => {
   return (
     <View style={styles.container}>
       {props.cells.map((cell, index) => (
-        <TableCell key={keyEtractor(props.cells.length ?? 0, index)}>
+        <TableCell
+          key={keyEtractor(props.cells.length ?? 0, index)}
+          style={props.cellStyle}>
           {cell}
         </TableCell>
       ))}
