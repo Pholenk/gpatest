@@ -4,8 +4,7 @@ export const TaskChipStyles = StyleSheet.create({
   container: {
     borderRadius: 20,
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 12,
+    flexDirection: 'row',
     backgroundColor: '#ffffff',
   },
   blue: {
@@ -18,8 +17,22 @@ export const TaskChipStyles = StyleSheet.create({
     color: '#000000',
     fontSize: 14,
     fontWeight: '500',
+    paddingHorizontal: 8,
   },
   whiteLabel: {
     color: '#ffffff',
+  },
+  iconBox: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    height: 20,
+    width: 24,
+  },
+  blueIcon: {
+    backgroundColor: '#00a5d7',
+  },
+  brownIcon: {
+    backgroundColor: '#a5664c',
   },
 });
