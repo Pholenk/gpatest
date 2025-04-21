@@ -1,6 +1,8 @@
 export * from './Tractor';
 export * from './Water';
 export * from './TaskBoard';
+export * from './TaskBoardCheck';
+export * from './TaskBoardPending';
 export * from './Close';
 export * from './ChevronDown';
 export * from './Calendar';
@@ -8,3 +10,7 @@ export * from './Undo';
 export * from './Save';
 export * from './Person';
 export * from './RightCircle';
+export * from './Plus';
+export * from './Search';
+export * from './Map';
+export * from './Menu';
