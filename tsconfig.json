@@ -1,3 +1,36 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"],
+      "tests": ["tests/*"],
+      "@assets/*": ["./src/ui/assets/*"],
+      "@assets": ["./src/ui/assets/index.ts"],
+      "@atoms/*": ["src/ui/atoms/*"],
+      "@atoms": ["src/ui/atoms/index.ts"],
+      "@molecules/*": ["src/ui/molecules/*"],
+      "@molecules": ["src/ui/molecules/index.ts"],
+      "@organisms/*": ["src/ui/organisms/*"],
+      "@organisms": ["src/ui/organisms/index.ts"],
+      "@screens/*": ["src/ui/screens/*"],
+      "@screens": ["src/ui/screens/index.ts"],
+      "@templates/*": ["src/ui/templates/*"],
+      "@templates": ["src/ui/templates/index.ts"],
+      "@utils": ["src/utils/index.ts"],
+      "@utils/*": ["src/utils/*"],
+      "@ui": ["src/ui/index.ts"],
+      "@ui/*": ["src/ui/*"],
+      "@navigation": ["src/navigation/index.tsx"],
+      "@navigation/*": ["src/navigation/*"],
+      "@hooks": ["src/hooks/index.ts"],
+      "@hooks/*": ["src/hooks/*"],
+      "@types": ["./src/types/index.ts"],
+      "@types/*": ["src/types/*"],
+      "@services": ["./src/services/index.ts"],
+      "@services/*": ["./src/services/*"],
+      "@testutils": ["./src/testutils/index.ts"]
+    }
+  },
+  "compileOnSave": false
 }
