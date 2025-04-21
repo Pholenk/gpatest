@@ -1,15 +1,20 @@
-import {useState} from 'react';
+import {FC, useState} from 'react';
 import {Login} from '@templates';
 import {useStorage} from '@hooks';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '@/types/navigation';
+import {SCREEN_NAME} from '@navigation';
 
-export const LoginScreen = () => {
+type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
+
+export const LoginScreen: FC<LoginScreenProps> = ({
+  navigation,
+}: LoginScreenProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [_result, setLocalStorage] = useStorage('lastLogin');
 
   const handleOnChange = (key: string, value: string) => {
-    console.log(key, value);
-
     switch (key) {
       case 'email':
         setEmail(value);
@@ -30,9 +35,9 @@ export const LoginScreen = () => {
   const handleOnLogin = () => {
     const now = new Date();
 
-    console.log('login', email, password);
     if (validateForm()) {
       setLocalStorage(`${now}`);
+      navigation.navigate(SCREEN_NAME.HOME);
     }
   };
 

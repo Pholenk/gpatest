@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@/types/navigation';
-import {LoginScreen} from '@screens';
+import {HomeScreen, LoginScreen} from '@screens';
 import {SCREEN_NAME} from './ScreenName';
 
 export * from './ScreenName';
@@ -18,6 +18,13 @@ export const RootNavigator = (props: {
         <Stack.Screen
           name={SCREEN_NAME.LOGIN}
           component={LoginScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name={SCREEN_NAME.HOME}
+          component={HomeScreen}
           options={{
             headerShown: false,
           }}
