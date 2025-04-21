@@ -1,4 +1,4 @@
-import {FC, useCallback} from 'react';
+import React, {FC, useCallback} from 'react';
 import {Text, View} from 'react-native';
 import {LoginFormStyles} from './LoginFormStyle';
 import {Person, RightCircle} from '@assets';

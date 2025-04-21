@@ -1,4 +1,4 @@
-import {FC, useCallback} from 'react';
+import React, {FC, useCallback} from 'react';
 import {FormInputTextGroupStyle} from './FormInputTextGroupStyle';
 import {InputText, InputTextProps, Label, LabelProps} from '@atoms';
 import {View} from 'react-native';

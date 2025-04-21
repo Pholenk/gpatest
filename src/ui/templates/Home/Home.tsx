@@ -1,6 +1,6 @@
+import React, {FC, useCallback} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {HomeStyles} from './HomeStyle';
-import {FC, useCallback} from 'react';
 
 export type HomeMenu = {
   label: string;
