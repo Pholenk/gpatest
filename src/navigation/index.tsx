@@ -36,7 +36,13 @@ export const RootNavigator = (props: {
             headerShown: false,
           }}
         />
-        <Stack.Screen name={SCREEN_NAME.FIELD} component={FieldScreen} />
+        <Stack.Screen
+          name={SCREEN_NAME.FIELD}
+          component={FieldScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
