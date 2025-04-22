@@ -12,7 +12,7 @@ export const LabelStyle = StyleSheet.create({
     marginHorizontal: 8,
   },
   label: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#333',
   },
   tooltip: {
