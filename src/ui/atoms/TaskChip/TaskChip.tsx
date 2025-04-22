@@ -1,7 +1,7 @@
 import React, {FC, useCallback} from 'react';
 import {Text, View} from 'react-native';
 import {TaskChipStyles} from './TaskChipStyles';
-import {Plant, Tractor, Water} from '@assets';
+import {Calendar, Plant, Tractor, Water} from '@assets';
 
 export interface TaskChipProps {
   label: string;
@@ -27,6 +27,9 @@ export const TaskChip: FC<TaskChipProps> = ({label}) => {
       return [styles.container, styles.green];
     }
 
+    if (label.toLowerCase() === 'snc' || /^20/g.test(label.toLowerCase())) {
+      return [styles.container, styles.darkBlue];
+    }
     return styles.container;
   };
 
@@ -55,11 +58,20 @@ export const TaskChip: FC<TaskChipProps> = ({label}) => {
       );
     }
 
+    if (label.toLowerCase() === 'snc' || /^20/g.test(label.toLowerCase())) {
+      return (
+        <View style={[styles.iconBox, styles.darkBlueIcon]}>
+          <Calendar color="#ffffff" width={16} height={16} />
+        </View>
+      );
+    }
+
     return null;
   }, [
     label,
     styles.blueIcon,
     styles.brownIcon,
+    styles.darkBlueIcon,
     styles.greenLightIcon,
     styles.iconBox,
   ]);
