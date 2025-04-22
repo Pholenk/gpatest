@@ -1,13 +1,14 @@
 import React, {FC, useCallback} from 'react';
 import {FormInputTextGroupStyle} from './FormInputTextGroupStyle';
 import {InputText, InputTextProps, Label, LabelProps} from '@atoms';
-import {View} from 'react-native';
+import {StyleProp, View, ViewStyle} from 'react-native';
 
 export type FormInputTextGroupProps = Omit<LabelProps, 'children'> &
   Omit<InputTextProps, 'value' | 'onChange'> & {
     label: string;
     value?: string;
     onChange?: (value: string) => void;
+    containerStyle?: StyleProp<ViewStyle>;
   };
 
 export const FormInputTextGroup: FC<FormInputTextGroupProps> = props => {
@@ -24,7 +25,7 @@ export const FormInputTextGroup: FC<FormInputTextGroupProps> = props => {
   );
 
   return (
-    <View style={styles.container}>
+    <View style={[props.containerStyle, styles.container]}>
       <Label
         labelStyle={props.labelStyle}
         tooltip={props.tooltip}
