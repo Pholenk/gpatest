@@ -27,6 +27,7 @@ export const FormInputTextGroup: FC<FormInputTextGroupProps> = props => {
     <View style={styles.container}>
       <Label
         labelStyle={props.labelStyle}
+        tooltip={props.tooltip}
         containerStyle={props.containerStyle}>
         {props.label}
       </Label>
