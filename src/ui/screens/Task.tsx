@@ -11,13 +11,17 @@ import {
   TaskBoardCheck,
   TaskBoardPending,
 } from '@assets';
+import {TaskType} from '@utils';
+import {TaskItem} from '@/types/taskItem';
 
 export type TaskScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'Task'
 >;
-export const TaskScreen: FC<TaskScreenProps> = props => {
+export const TaskScreen: FC<TaskScreenProps> = () => {
   const [activeTab, setActiveTab] = useState('task list');
+  const [showTaskForm, setShowTaskForm] = useState(false);
+  const [showUpdateTaskForm, setShowUpdateTaskForm] = useState(false);
   const tabs = [
     {
       label: 'task list',
@@ -46,10 +50,44 @@ export const TaskScreen: FC<TaskScreenProps> = props => {
     },
   ];
   const buttons = [
-    {label: 'add', icon: <Plus />, onPressButton: () => {}},
+    {
+      label: 'add',
+      icon: <Plus />,
+      onPressButton: () => {
+        setShowTaskForm(true);
+      },
+    },
     {label: 'map view', icon: <Map />, onPressButton: () => {}},
     {label: 'filters', icon: <Search />, onPressButton: () => {}},
     {label: 'operations', icon: <Menu />, onPressButton: () => {}},
   ];
-  return <Task tabs={tabs} activeTab={activeTab} buttons={buttons} />;
+  const tasks: TaskItem[] = [
+    {
+      type: 'Cultivate' as TaskType,
+      name: 'Name of task',
+      fieldName: 'Field Cane 1',
+      crop: 'Beans',
+      dueBy: 'My Self',
+      dueDate: '2025-02-17T16:30:00',
+      lastAction: '2025-02-17T16:30:00',
+      instruction: '',
+      attachment: '',
+    },
+  ];
+  return (
+    <Task
+      tabs={tabs}
+      activeTab={activeTab}
+      buttons={buttons}
+      taskItems={tasks}
+      showTaskForm={showTaskForm}
+      closeTaskForm={() => {
+        setShowTaskForm(false);
+      }}
+      showUpdateTaskForm={showUpdateTaskForm}
+      toggleUpdateTaskForm={(state: boolean) => {
+        setShowUpdateTaskForm(state);
+      }}
+    />
+  );
 };
