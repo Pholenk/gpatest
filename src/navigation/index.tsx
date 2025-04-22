@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@/types/navigation';
-import {HomeScreen, LoginScreen, TaskScreen} from '@screens';
+import {FieldScreen, HomeScreen, LoginScreen, TaskScreen} from '@screens';
 import {SCREEN_NAME} from './ScreenName';
 
 export * from './ScreenName';
@@ -36,6 +36,7 @@ export const RootNavigator = (props: {
             headerShown: false,
           }}
         />
+        <Stack.Screen name={SCREEN_NAME.FIELD} component={FieldScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

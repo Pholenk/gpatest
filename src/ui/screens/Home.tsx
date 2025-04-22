@@ -11,6 +11,10 @@ export const HomeScreen: FC<HomeScreenProps> = ({navigation}) => {
       label: 'Task',
       onMenuPress: () => navigation.navigate('Task'),
     },
+    {
+      label: 'Field',
+      onMenuPress: () => navigation.navigate('Field'),
+    },
   ];
 
   return <Home menu={HomeMenu} />;
